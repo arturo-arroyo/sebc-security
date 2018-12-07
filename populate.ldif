@@ -1,0 +1,149 @@
+dn: dc=sebc,dc=org
+objectClass: top
+objectClass: dcObject
+objectclass: organization
+o: Cloudera Inc
+dc: sebc
+
+dn: cn=admin,dc=sebc,dc=org
+objectClass: organizationalRole
+cn: admin
+description: Directory admin
+
+dn: ou=people,dc=sebc,dc=org
+objectClass: organizationalUnit
+ou: people
+description: Generic people branch
+
+dn: ou=groups,dc=sebc,dc=org
+objectClass: organizationalUnit
+ou: groups
+description: Generic groups branch
+
+dn: ou=machines,dc=sebc,dc=org
+objectClass: organizationalUnit
+ou: machines
+description: Generic machines branch
+
+dn: uid=admin,ou=people,dc=sebc,dc=org
+displayName: Administrator
+cn: Administrator
+givenName: Administrator
+sn: None
+initials: ADM
+mail: admin@EC2.INTERNAL
+uid: admin
+uidNumber: 50000
+gidNumber: 10000
+homeDirectory: /home/admin
+loginShell: /bin/bash
+gecos: Administrator,,,,
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+userPassword: {SSHA}3t7KvEPO5jcLMmNyPvI2EGpr7Mpq4VWZ
+
+dn: uid=user1,ou=people,dc=sebc,dc=org
+displayName: User 1
+cn: User 1
+givenName: User
+sn: One
+initials: US1
+mail: user1@EC2.INTERNAL
+uid: user1
+uidNumber: 50001
+gidNumber: 20000
+homeDirectory: /home/user1
+loginShell: /bin/bash
+gecos: User 1,,,,
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+userPassword: {SSHA}HQXAyLsSDy1wcYxNrmTz3xYPvQTPt9AD
+
+dn: uid=user2,ou=people,dc=sebc,dc=org
+displayName: User 2
+cn: User 2
+givenName: User
+sn: Two
+initials: US2
+mail: user2@EC2.INTERNAL
+uid: user2
+uidNumber: 50002
+gidNumber: 20000
+homeDirectory: /home/user2
+loginShell: /bin/bash
+gecos: User 2,,,,
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+userPassword: {SSHA}oOHhMqabrllq5WxZ9F4yU9KLVflPG1fA
+
+dn: uid=user3,ou=people,dc=sebc,dc=org
+displayName: User 3
+cn: User 3
+givenName: User
+sn: Three
+initials: US3
+mail: user3@EC2.INTERNAL
+uid: user3
+uidNumber: 50003
+gidNumber: 20000
+homeDirectory: /home/user3
+loginShell: /bin/bash
+gecos: User 3,,,,
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+userPassword: {SSHA}GeJgtZ+EXVyGHf1gHaRwL9zatIcTtDTE
+
+dn: uid=user4,ou=people,dc=sebc,dc=org
+displayName: User 4
+cn: User 4
+givenName: User
+sn: Four
+initials: US4
+mail: user4@EC2.INTERNAL
+uid: user4
+uidNumber: 50004
+gidNumber: 20000
+homeDirectory: /home/user4
+loginShell: /bin/bash
+gecos: User 4,,,,
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+userPassword: {SSHA}49UVpWVmSA02H56/xM8eFUBn9qKndHom
+
+dn: cn=admins,ou=groups,dc=sebc,dc=org
+cn: admins
+description: Admins of the enterprise
+gidNumber: 10000
+objectClass: posixGroup
+memberUid: admin
+
+dn: cn=users,ou=groups,dc=sebc,dc=org
+cn: users
+description: Users of the enterprise
+gidNumber: 20000
+objectClass: posixGroup
+memberUid: user1
+memberUid: user2
+memberUid: user3
+memberUid: user4
+
+dn: cn=managers,ou=groups,dc=sebc,dc=org
+cn: managers
+description: Managers of the enterprise
+gidNumber: 20001
+objectClass: posixGroup
+memberUid: user1
+memberUid: user3
+
+dn: cn=analysts,ou=groups,dc=sebc,dc=org
+cn: analysts
+description: Analysts of the enterprise
+gidNumber: 20002
+objectClass: posixGroup
+memberUid: user2
+memberUid: user4
