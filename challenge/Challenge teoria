@@ -1,0 +1,58 @@
+Describe the capabilities of Navigator Audit, Lineage, and Metadata. What is it useful for?
+cloudera navigator 
+Lineage: Decribe la conexion y flujo de datos entre los recursos a traves del cual se genera un dato, con este linaje se tiene el detalle de origen y los procesos con los cuales se genero un dato final. Este l inaje solo se puede generar dentro del ambiente de cCloudera
+ 
+Audit: Permite auditar eventos y los concentra para poder analizar a detalle el comportamiento que tuvieron y a raiz de esto poder hacer un track en caso de que se requiera realizar analisis de un evento en especifico.}
+
+Metadata:	Permite manejar data sobre los metadatos. Obtiene esta metadata de los servicios CDH en el cluster, asi como informacion de conexión entre los servicios CDH. Almacena estas metadatos para un posible analisis y auditoria, ademas de las autorizaciones de los usuarios.  
+
+
+Which technology would you use for encrypting Kafka, Kudu and Flume volumes?
+Cloudera Navigator Encrypt (ya que usan discos dedidacos para los datos)
+
+LOB	
+	FINANCE
+	HR
+
+DATABASES	
+	FIinance
+	HR
+
+GRUPOS	
+	hr_grp_manager
+	hr_grp_analyst
+	fn_grp_manager
+	fn_grp_analyst
+
+ROLES	
+	fn_manager
+	fn_analyst
+	hr_manager
+	hr_analyst
+
+CREACION DE GRUPOS
+CREATE GROUP fn_grp_manager
+CREATE GROUP fn_grp_analyst
+CREATE GROUP hr_grp_manager
+CREATE GROUP hr_grp_analyst
+
+CREACION DE ROLES
+CREATE ROLE fn_manager
+CREATE ROLE fn_analyst
+CREATE ROLE hr_manager
+CREATE ROLE hr_analyst
+
+ASIGNACION DE ROLES CON GRUPOS
+GRANT ROLE fn_manager TO GROUP fn_grp_manager
+GRANT ROLE fn_analyst TO GROUP fn_grp_analyst
+GRANT ROLE hr_manager TO GROUP hr_grp_manager
+GRANT ROLE hr_analyst TO GROUP hr_grp_analyst
+
+PERMISOS DE ACCESO A BASES DE DATOS
+GRANT ALL on DATABASE FINANCE TO ROLE fn_manager
+GRANT ALL on DATABASE HR TO ROLE hr_manager
+GRANT SELECT on DATABASE FINANCE TO ROLE fn_analyst
+GRANT SELECT on DATABASE HR TO ROLE hr_analyst
+GRANT SELECT on DATABASE FINANCE TO ROLE hr_manager
+GRANT SELECT on DATABASE HR TO ROLE fn_manager
+
