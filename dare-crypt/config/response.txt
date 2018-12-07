@@ -1,3 +1,14 @@
 Add your response here
-La encripcionse tendria que realizar con HDFS Transparent Encryption
+
+
+40 TB /user/hive/warehouse
+La encripcion se tendria que realizar con HDFS Transparent Encryption
+Se generaria una Encripted Zone para el directorio /user/hive/warehouse
+Crear una llave y asociarla con el directorio a encriptar
+Con esto se estaria asignando una llave para segregar el acceso a este directorio y tener mejor control de accesos a este recurso.
+Se generaria una segunda llave para cifrar esta primera
+La comunicacion se llevaria a cabo entre el KTS y el KMS del cliente para realizar los accesos al directorio encriptado
+Esta segunda llave estaria en el KTS (Key Trustee Server), esto para tener esta llave alojada en un repositorio externo
+
+
 
